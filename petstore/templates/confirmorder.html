@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static%}
+
+
+{% block 'main' %}
+<div class="row">
+    
+    <div class="box col-9">
+        <h3 class="bg-info">Products</h3>
+        {% for prod in cart %}
+        <div class="box row m-2">
+            <div class="box col-6">
+                <img src="" alt=""
+                width="100%" height="250px">
+            </div>
+            <div class="box col-6 p-4">
+                <h1>{{ prod.pid.name }}</h1>
+                <strong>{{prod.pid.breed}} {{ prod. pid.type}}</strong>
+                <strong>Rs.{{prod.pid.price}}</strong><br>
+                Quantity:
+                {% if pet.quantity > 1 %}
+                <a class="btn btn-warning" href="/updatecart/0/{{ pet.id }}">-</a>
+                {% endif %}
+                <strong>{{ pid.quantity}}</strong><br>
+                <a class="btn btn-warning" href="/updatecart/1/{{ pet.id }}">+</a><br>
+                <a href="/removepet/{{pet.id}}" class="btn btn-warning">Remove</a>
+    
+            </div>
+        </div>
+
+<!--      <div class="box row m-2">
+            <div class="box col-6">
+                <img src="" alt=""
+                width="100%" height="250px">
+            </div>
+            <div class="box col-6 p-4">
+                <h1>Nikkor 500mm f/4</h1>
+                <p>AF-S NIKKOn 500MM F/4E FL ED VR</p>
+                <h1>Rs. 700000</h1>
+                Quantity:
+                <button class="btn btn-warning">-</button>
+                <strong type="number" id="">
+                <button class="btn btn-warning">+</button>
+            </div>
+        </div>
+        <div class="box row m-2">
+            <div class="box col-6">
+                <img src="" alt=""
+                width="100%" height="250px">
+            </div>
+            <div class="box col-6 p-4">
+                <h1>AC4</h1>
+                <p>Lloyd 1.5 Ton 3 Star Inverter Split AC (5 in 1 Convertible, Copper, Anti-Viral + PM 2.5 Filter, 2023 Model, White with Chrome Deco Strip, GLS18I3FWAGC)</p>
+                <h1>Rs. 35000</h1>
+                Quantity:
+                <button class="btn btn-warning">-</button>
+                <strong type="number" id="" value="{{p}}">
+                <button class="btn btn-warning">+</button>
+            </div>
+        </div>
+        <div class="box row m-2">
+            <div class="box col-6">
+                <img src="" alt=""
+                width="100%" height="250px">
+            </div>
+            <div class="box col-6 p-4">
+                <h1>Joker And Witch</h1>
+                <p>blue colour</p>
+                <h1>Rs. 1000</h1>
+                Quantity:
+                <button class="btn btn-warning">-</button>
+                <strong type="number" id="">
+                <button class="btn btn-warning">+</button>
+            </div>
+        </div>
+    </div>-->
+    
+    <div class="box col-3">
+        <h3 class="bg-info">Summary</h3>
+        <h3>Item count:{{count}}</h3>
+        <h3>Total Amount: Rs.{{total}}</h3>
+        <br>
+<!--       <a class="btn btn-warning" href="/confirmorder">Confirm Order</a>
+        <a class="btn btn-warning" href="/">shop More</a>-->
+        <!-- <a class="btn btn-warning" href="/makepayment">Make Payment</a>
+        <a class="btn btn-warning" href="/showcart">Show cart</a> -->
+        <a class="btn btn-warning" href="placeorder.html">Place Order</a>
+    </div>
+</div>
+</div>
+</div>
+<!-- End of row 2 -->
+<!-- Starting of row 3 -->
+<div class="myrow3 row">
+<div class="box col-4">
+<i class="bi bi-geo-alt-fill">Location</i><br>
+Lorem ipsum dolor sit amet consecteturadipisicing elit. Maxime nulla dolor distinctio atque, mollitia
+cum neque. Fugit aut dicta blanditiis
+nostrum minima aspernatur consequuntur repudiandae, possimus quas illo hic magni.
+</div>
+<div class="box col-4">
+Contact Us: <br>
+<i class="bi bi-telephone"></i>9923897788 <br>
+<i class="bi bi-envelope"></i>xyz@gmail.com
+</div>
+<div class="box col-4">
+<a href=""><i class="bi bi-linkedin" style="font-size: 20px;"></i></a><br>
+<a href=""><i class="bi bi-facebook" style="font-size: 20px"></i></a><br>
+<a href=""><i class="bi bi-instagram" style="font-size: 20px;"></i></a><br>
+<a href=""><i class="bi bi-twitter" style="font-size: 20px;"></i></a> <br>
+
+
+</div>
+</div>
+</div>
+{% endblock 'main' %}

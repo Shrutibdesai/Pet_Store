@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static%}
+
+
+{% block 'main' %}
+<div class="box row">
+    <div class="box col-6 p-1">
+        <img src="" height="300px" width="100%" alt="image not available">
+    </div>
+    <div class="box col-6">
+        <div class="card p-4" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title">{{pet.name}}</h5>
+              <h6>{{pet.type}} {{pet.breed}}</h6>
+              <p class="card-text">{{pet.description}}</p>
+              <strong>Gender: {{pet.gender}}</strong><br>
+              <strong>Age: {{pet.age}} weeks</strong><br>
+              <h2>Rs. {{pet.price}}</h2>
+              <br>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="/" class="btn btn-primary">Go Back</a>
+            </div>
+          </div>
+    </div>
+</div>
+{% endblock 'main' %}

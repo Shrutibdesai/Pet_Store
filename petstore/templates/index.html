@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'main' %}
+<div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+   <div class="d-flex">
+     <div class="toast-body">
+       Hello, world! This is a toast message.
+     </div>
+     <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+   </div>
+ </div>
+<div class="row "> 
+   <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Hello, world! This is a toast message.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>  
+   {% for message in messages %}  
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS  %}  
+            <div class="alert alert-success">
+               {{ message }}
+            </div>
+         {% endif %}
+   {% endfor %}
+   <!-- product 1  -->
+    {% for pet in pets %}
+    <div class="col-3 m-1">
+      <div class="card " >
+         <img src="{{ pet.petimage.url }}" class="card-img-top" alt="image not available">
+         <div class="card-body">
+            <h5 class="card-title">{{ pet.name}} </h5>
+            <h5 class="card-title">{{ pet.breed}} {{pet.type}}</h5>
+            <p class="card-text">Gender: {{pet.gender}}</p>
+            <p class="card-text">{{pet.description}}</p>
+            <strong>Rs. {{pet.price}} </strong><br>
+            <a href="/details/{{ pet.id }}" class="btn btn-warning">View Details</a> 
+            <a href="/addtocart/{{ pet.id }}" class="btn btn-warning mt-2">Add To Cart</a>
+         </div>
+      </div> 
+   </div>
+   {% endfor %}          
+</div>  
+
+{% endblock 'main' %}

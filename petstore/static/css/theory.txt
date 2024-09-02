@@ -1,0 +1,18 @@
+	 <576px
+sm   	≥576px
+md	    ≥768px
+lg	    ≥992px
+xl	    ≥1200px
+xxl	    ≥1400px
+
+
+home page----> product display
+detail---->product details
+register 
+login
+about us
+contact us
+
+margin&padding
+mt, mr,mb, ml
+m-1,m-2,m-3,m-4,m-5
